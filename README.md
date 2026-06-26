@@ -73,7 +73,10 @@ fraud-detection/
 ├── requirements.txt # Python dependencies
 ├── README.md
 └── .gitignore
-
+├── tlaplus-specs/
+│   ├── fraud_check_working.tla
+│   ├── fraud_check_working.cfg
+│   └── README.md
 ---
 
 ## 🔧 Installation
@@ -141,6 +144,15 @@ Implement more advanced algorithms in Rust (Isolation Forest in Rust)
 Containerise with Docker
 
 Real‑time transaction stream via WebSockets
+
+## Formal Verification
+
+I used TLA+ to formally verify the IQR anomaly detection logic. The TLC model checker proved:
+
+- **No false positives** – the system never incorrectly flags a normal transaction
+- **Type safety** – all variables stay in valid domains
+
+[View the TLA+ specification →](tlaplus-specs/)
 
 📄 License
 MIT © Tumelo Tshabalala
